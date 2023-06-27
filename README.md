@@ -53,23 +53,11 @@ No cuenta con un software de registro de citas en línea lo cual provoca que su 
 # Cuentas de usuario para acceder al sistema:
 Cada uno tiene un rol diferente.
 
-Rol: Paciente  
-DNI: 444444444  
-Contraseña: contrasena
-
-Rol: Médico
-DNI: 222222222
-Contraseña: contrasena
-
-Rol: Medico y paciente
-DNI: 888888888
-Contraseña: contrasena
-
-Rol: Administrador
-DNI: 000000000
-Contraseña: contrasena
-
-Rol: Almacenista
-DNI: 535353535
-Contraseña: contrasena
+| Rol               | DNI         | Contraseña    |
+|-------------------|-------------|---------------|
+| Paciente          | 444444444   | contrasena    |
+| Medico            | 222222222   | contrasena    |
+| Medico/Paciente   | 888888888   | contrasena    |
+| Administrador     | 000000000   | contrasena    |
+| Almacenista       | 535353535   | contrasena    |
 
