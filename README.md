@@ -1,13 +1,20 @@
+# Integrantes del equipo UwUntu
+- Visalot Arrieta, Valeria
+- Escalante Gonzales, Sergio
+- Ponce Cajahuanca, Daniel
+- Meza Villazana, Frank
 
-# MyClinic
+
+# Acerca de nuestro software
+![image-GNvO00VJe-transformed](https://github.com/waaaleria/MyClinic/assets/89658996/256e1f91-953b-41fe-acf5-b50851de62ff)
 
 MyClinic® es una plataforma de apoyo dirigida a la optimización de la administración de clínicas y hospitales.
 Este sistema será accesible tanto para los pacientes, doctores y personal administrativo del centro de salud.
 Con esta plataforma buscamos unificar los servicios para ofrecer transparencia al paciente y agilizar los procesos de clinicas u hospitales. 
 Tales procesos consisten en gestionar citas médicas, documentar diagnósticos, tratamientos y recetas,  visualizar de historial médico de cada paciente y consultar horarios de los medicos.
 
-# Clinica Ortega
-![k0MH1Dqc_400x400-removebg-preview](https://github.com/waaaleria/MyClinic/assets/89658996/399ac7c0-b044-444a-8f4a-28643c75ca8a)
+# Sobre el negocio al que se dara soporte
+![k0MH1Dqc_400x400-removebg-preview](https://github.com/waaaleria/MyClinic/assets/89658996/305ea5fd-4229-4095-a2e8-7944f8e3ffab)
 
 La Clínica Ortega es la más grande del centro del país.  Brinda servicio en más de 30 especialidades y posee un staff de 70 doctores y enfermeras especialistas en la función de la salud.
 No cuenta con un software de registro de citas en línea lo cual provoca que su proceso de registro sea realizado mediante teléfono fijo. Ademas, la información de los pacientes, médicos y citas de la clínica está guardada en hojas de cálculo en Excel. 
