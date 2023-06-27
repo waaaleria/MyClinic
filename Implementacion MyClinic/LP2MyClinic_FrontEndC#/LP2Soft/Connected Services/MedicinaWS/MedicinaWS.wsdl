@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lp2myclinic/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="MedicinaWS" targetNamespace="http://services.lp2myclinic/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LP2MyClinicWebService/MedicinaWS?xsd=1" namespace="http://services.lp2myclinic/" />
+    </xsd:schema>
+  </types>
+  <message name="listarMedicinasTodasParaAlmacenista">
+    <part name="parameters" element="tns:listarMedicinasTodasParaAlmacenista" />
+  </message>
+  <message name="listarMedicinasTodasParaAlmacenistaResponse">
+    <part name="parameters" element="tns:listarMedicinasTodasParaAlmacenistaResponse" />
+  </message>
+  <message name="buscarMedicamentos">
+    <part name="parameters" element="tns:buscarMedicamentos" />
+  </message>
+  <message name="buscarMedicamentosResponse">
+    <part name="parameters" element="tns:buscarMedicamentosResponse" />
+  </message>
+  <message name="listarInventario">
+    <part name="parameters" element="tns:listarInventario" />
+  </message>
+  <message name="listarInventarioResponse">
+    <part name="parameters" element="tns:listarInventarioResponse" />
+  </message>
+  <message name="obtenerMedicamento">
+    <part name="parameters" element="tns:obtenerMedicamento" />
+  </message>
+  <message name="obtenerMedicamentoResponse">
+    <part name="parameters" element="tns:obtenerMedicamentoResponse" />
+  </message>
+  <message name="listar_inventario_x_fechas">
+    <part name="parameters" element="tns:listar_inventario_x_fechas" />
+  </message>
+  <message name="listar_inventario_x_fechasResponse">
+    <part name="parameters" element="tns:listar_inventario_x_fechasResponse" />
+  </message>
+  <message name="insertarMedicamento">
+    <part name="parameters" element="tns:insertarMedicamento" />
+  </message>
+  <message name="insertarMedicamentoResponse">
+    <part name="parameters" element="tns:insertarMedicamentoResponse" />
+  </message>
+  <message name="eliminarInventario">
+    <part name="parameters" element="tns:eliminarInventario" />
+  </message>
+  <message name="eliminarInventarioResponse">
+    <part name="parameters" element="tns:eliminarInventarioResponse" />
+  </message>
+  <message name="listarInventarioMantenimiento">
+    <part name="parameters" element="tns:listarInventarioMantenimiento" />
+  </message>
+  <message name="listarInventarioMantenimientoResponse">
+    <part name="parameters" element="tns:listarInventarioMantenimientoResponse" />
+  </message>
+  <message name="insertarInventario">
+    <part name="parameters" element="tns:insertarInventario" />
+  </message>
+  <message name="insertarInventarioResponse">
+    <part name="parameters" element="tns:insertarInventarioResponse" />
+  </message>
+  <message name="listarMedicamentosTodos">
+    <part name="parameters" element="tns:listarMedicamentosTodos" />
+  </message>
+  <message name="listarMedicamentosTodosResponse">
+    <part name="parameters" element="tns:listarMedicamentosTodosResponse" />
+  </message>
+  <portType name="MedicinaWS">
+    <operation name="listarMedicinasTodasParaAlmacenista">
+      <input wsam:Action="http://services.lp2myclinic/MedicinaWS/listarMedicinasTodasParaAlmacenistaRequest" message="tns:listarMedicinasTodasParaAlmacenista" />
+      <output wsam:Action="http://services.lp2myclinic/MedicinaWS/listarMedicinasTodasParaAlmacenistaResponse" message="tns:listarMedicinasTodasParaAlmacenistaResponse" />
+    </operation>
+    <operation name="buscarMedicamentos">
+      <input wsam:Action="http://services.lp2myclinic/MedicinaWS/buscarMedicamentosRequest" message="tns:buscarMedicamentos" />
+      <output wsam:Action="http://services.lp2myclinic/MedicinaWS/buscarMedicamentosResponse" message="tns:buscarMedicamentosResponse" />
+    </operation>
+    <operation name="listarInventario">
+      <input wsam:Action="http://services.lp2myclinic/MedicinaWS/listarInventarioRequest" message="tns:listarInventario" />
+      <output wsam:Action="http://services.lp2myclinic/MedicinaWS/listarInventarioResponse" message="tns:listarInventarioResponse" />
+    </operation>
+    <operation name="obtenerMedicamento">
+      <input wsam:Action="http://services.lp2myclinic/MedicinaWS/obtenerMedicamentoRequest" message="tns:obtenerMedicamento" />
+      <output wsam:Action="http://services.lp2myclinic/MedicinaWS/obtenerMedicamentoResponse" message="tns:obtenerMedicamentoResponse" />
+    </operation>
+    <operation name="listar_inventario_x_fechas">
+      <input wsam:Action="http://services.lp2myclinic/MedicinaWS/listar_inventario_x_fechasRequest" message="tns:listar_inventario_x_fechas" />
+      <output wsam:Action="http://services.lp2myclinic/MedicinaWS/listar_inventario_x_fechasResponse" message="tns:listar_inventario_x_fechasResponse" />
+    </operation>
+    <operation name="insertarMedicamento">
+      <input wsam:Action="http://services.lp2myclinic/MedicinaWS/insertarMedicamentoRequest" message="tns:insertarMedicamento" />
+      <output wsam:Action="http://services.lp2myclinic/MedicinaWS/insertarMedicamentoResponse" message="tns:insertarMedicamentoResponse" />
+    </operation>
+    <operation name="eliminarInventario">
+      <input wsam:Action="http://services.lp2myclinic/MedicinaWS/eliminarInventarioRequest" message="tns:eliminarInventario" />
+      <output wsam:Action="http://services.lp2myclinic/MedicinaWS/eliminarInventarioResponse" message="tns:eliminarInventarioResponse" />
+    </operation>
+    <operation name="listarInventarioMantenimiento">
+      <input wsam:Action="http://services.lp2myclinic/MedicinaWS/listarInventarioMantenimientoRequest" message="tns:listarInventarioMantenimiento" />
+      <output wsam:Action="http://services.lp2myclinic/MedicinaWS/listarInventarioMantenimientoResponse" message="tns:listarInventarioMantenimientoResponse" />
+    </operation>
+    <operation name="insertarInventario">
+      <input wsam:Action="http://services.lp2myclinic/MedicinaWS/insertarInventarioRequest" message="tns:insertarInventario" />
+      <output wsam:Action="http://services.lp2myclinic/MedicinaWS/insertarInventarioResponse" message="tns:insertarInventarioResponse" />
+    </operation>
+    <operation name="listarMedicamentosTodos">
+      <input wsam:Action="http://services.lp2myclinic/MedicinaWS/listarMedicamentosTodosRequest" message="tns:listarMedicamentosTodos" />
+      <output wsam:Action="http://services.lp2myclinic/MedicinaWS/listarMedicamentosTodosResponse" message="tns:listarMedicamentosTodosResponse" />
+    </operation>
+  </portType>
+  <binding name="MedicinaWSPortBinding" type="tns:MedicinaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarMedicinasTodasParaAlmacenista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarMedicamentos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarInventario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerMedicamento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listar_inventario_x_fechas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarMedicamento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarInventario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarInventarioMantenimiento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarInventario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMedicamentosTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="MedicinaWS">
+    <port name="MedicinaWSPort" binding="tns:MedicinaWSPortBinding">
+      <soap:address location="http://localhost:8080/LP2MyClinicWebService/MedicinaWS" />
+    </port>
+  </service>
+</definitions>

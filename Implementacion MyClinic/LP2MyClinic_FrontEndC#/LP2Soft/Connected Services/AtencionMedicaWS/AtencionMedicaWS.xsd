@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.lp2myclinic/" targetNamespace="http://services.lp2myclinic/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ListarHorarioPacienteFechaIniFinal" type="tns:ListarHorarioPacienteFechaIniFinal" />
+  <xs:element name="ListarHorarioPacienteFechaIniFinalResponse" type="tns:ListarHorarioPacienteFechaIniFinalResponse" />
+  <xs:element name="buscarCita" type="tns:buscarCita" />
+  <xs:element name="buscarCitaResponse" type="tns:buscarCitaResponse" />
+  <xs:element name="eliminarCitaMedica" type="tns:eliminarCitaMedica" />
+  <xs:element name="eliminarCitaMedicaResponse" type="tns:eliminarCitaMedicaResponse" />
+  <xs:element name="insertarCitaMedica" type="tns:insertarCitaMedica" />
+  <xs:element name="insertarCitaMedicaResponse" type="tns:insertarCitaMedicaResponse" />
+  <xs:element name="insertarDiagnostico" type="tns:insertarDiagnostico" />
+  <xs:element name="insertarDiagnosticoResponse" type="tns:insertarDiagnosticoResponse" />
+  <xs:element name="insertarRecetaMedica" type="tns:insertarRecetaMedica" />
+  <xs:element name="insertarRecetaMedicaResponse" type="tns:insertarRecetaMedicaResponse" />
+  <xs:element name="listarCitasMedicoPorPacienteFechas" type="tns:listarCitasMedicoPorPacienteFechas" />
+  <xs:element name="listarCitasMedicoPorPacienteFechasResponse" type="tns:listarCitasMedicoPorPacienteFechasResponse" />
+  <xs:element name="listarCitasXPaciente" type="tns:listarCitasXPaciente" />
+  <xs:element name="listarCitasXPacienteResponse" type="tns:listarCitasXPacienteResponse" />
+  <xs:element name="listarCitasxPacientexFecha" type="tns:listarCitasxPacientexFecha" />
+  <xs:element name="listarCitasxPacientexFechaResponse" type="tns:listarCitasxPacientexFechaResponse" />
+  <xs:element name="listarDiagnosticosPorCita" type="tns:listarDiagnosticosPorCita" />
+  <xs:element name="listarDiagnosticosPorCitaResponse" type="tns:listarDiagnosticosPorCitaResponse" />
+  <xs:element name="listarLineaRecetaMedica" type="tns:listarLineaRecetaMedica" />
+  <xs:element name="listarLineaRecetaMedicaResponse" type="tns:listarLineaRecetaMedicaResponse" />
+  <xs:element name="listarRecetaMedicaPorCita" type="tns:listarRecetaMedicaPorCita" />
+  <xs:element name="listarRecetaMedicaPorCitaDetalle" type="tns:listarRecetaMedicaPorCitaDetalle" />
+  <xs:element name="listarRecetaMedicaPorCitaDetalleResponse" type="tns:listarRecetaMedicaPorCitaDetalleResponse" />
+  <xs:element name="listarRecetaMedicaPorCitaResponse" type="tns:listarRecetaMedicaPorCitaResponse" />
+  <xs:element name="listarRecetaxCita" type="tns:listarRecetaxCita" />
+  <xs:element name="listarRecetaxCitaResponse" type="tns:listarRecetaxCitaResponse" />
+  <xs:element name="modificarCita" type="tns:modificarCita" />
+  <xs:element name="modificarCitaResponse" type="tns:modificarCitaResponse" />
+  <xs:complexType name="listarRecetaMedicaPorCitaDetalle">
+    <xs:sequence>
+      <xs:element name="idCita" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRecetaMedicaPorCitaDetalleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:recetaMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recetaMedica">
+    <xs:sequence>
+      <xs:element name="idCitaMedica" type="xs:int" />
+      <xs:element name="idRecetaMedica" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lineaReceta" nillable="true" type="tns:lineaReceta" />
+      <xs:element minOccurs="0" name="vigenciaFinal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="vigenciaInicial" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lineaReceta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dosis" type="xs:string" />
+      <xs:element minOccurs="0" name="frecuencia" type="xs:string" />
+      <xs:element name="idLineaReceta" type="xs:int" />
+      <xs:element name="idRecetaMedica" type="xs:int" />
+      <xs:element minOccurs="0" name="medicamento" type="tns:medicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="medicamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="componente" type="tns:componente" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idMedicamento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreComercial" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreLaboratorio" type="xs:string" />
+      <xs:element name="precio" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="componente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idComponente" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreComponente" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCitasMedicoPorPacienteFechas">
+    <xs:sequence>
+      <xs:element name="idMed" type="xs:int" />
+      <xs:element name="idPac" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaIni" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCitasMedicoPorPacienteFechasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:citaMedicaDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="citaMedicaDto">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:int" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horario" type="xs:string" />
+      <xs:element name="idCita" type="xs:int" />
+      <xs:element minOccurs="0" name="motivo" type="xs:string" />
+      <xs:element minOccurs="0" name="paciente" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCitaMedica">
+    <xs:sequence>
+      <xs:element name="insertarCitaMedica" type="xs:int" />
+      <xs:element name="arg1" type="xs:int" />
+      <xs:element name="arg2" type="xs:int" />
+      <xs:element name="arg3" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCitaMedicaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCitaMedica">
+    <xs:sequence>
+      <xs:element name="citaMedica" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCitaMedicaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDiagnostico">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="diagnostico" type="tns:diagnostico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="diagnostico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idCitaMedica" type="xs:int" />
+      <xs:element name="idDiagnostico" type="xs:int" />
+      <xs:element minOccurs="0" name="tratamiento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDiagnosticoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCitasxPacientexFecha">
+    <xs:sequence>
+      <xs:element name="idPaciente" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaIni" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCitasxPacientexFechaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:citaMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="citaMedica">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="diagnosticos" nillable="true" type="tns:diagnostico" />
+      <xs:element minOccurs="0" name="especialidadMedico" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horario" type="tns:horario" />
+      <xs:element name="idCita" type="xs:int" />
+      <xs:element name="idMedico" type="xs:int" />
+      <xs:element name="idPaciente" type="xs:int" />
+      <xs:element minOccurs="0" name="motivoCita" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreMedico" type="xs:string" />
+      <xs:element minOccurs="0" name="programa" type="tns:programaAtencion" />
+      <xs:element minOccurs="0" name="recetaMedica" type="tns:recetaMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="horario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="diaSemana" type="tns:diaSemana" />
+      <xs:element minOccurs="0" name="horaFin" type="tns:localTime" />
+      <xs:element minOccurs="0" name="horaInicio" type="tns:localTime" />
+      <xs:element name="idHorario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="localTime" final="extension restriction">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="programaAtencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="diaSemana" type="tns:diaSemana" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="hora_fin" type="xs:string" />
+      <xs:element minOccurs="0" name="hora_inicio" type="xs:string" />
+      <xs:element name="idMedico" type="xs:int" />
+      <xs:element name="idProgramaAtencion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRecetaxCita">
+    <xs:sequence>
+      <xs:element name="idCita" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRecetaxCitaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:lineaReceta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarRecetaMedica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="recetaMedica" type="tns:recetaMedicaDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recetaMedicaDto">
+    <xs:sequence>
+      <xs:element name="idCitaMedica" type="xs:int" />
+      <xs:element name="idRecetaMedica" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lineaReceta" nillable="true" type="tns:lineaRecetaDto" />
+      <xs:element minOccurs="0" name="vigenciaFinal" type="xs:string" />
+      <xs:element minOccurs="0" name="vigenciaInicial" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lineaRecetaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dosis" type="xs:string" />
+      <xs:element minOccurs="0" name="frecuencia" type="xs:string" />
+      <xs:element name="idLineaReceta" type="xs:int" />
+      <xs:element name="idMedicamento" type="xs:int" />
+      <xs:element name="idRecetaMedica" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreMedicamento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarRecetaMedicaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarLineaRecetaMedica">
+    <xs:sequence>
+      <xs:element name="idRecetaMedica" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarLineaRecetaMedicaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:lineaRecetaDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDiagnosticosPorCita">
+    <xs:sequence>
+      <xs:element name="idCita" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDiagnosticosPorCitaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:diagnostico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarHorarioPacienteFechaIniFinal">
+    <xs:sequence>
+      <xs:element name="idusuaio" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaIni" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarHorarioPacienteFechaIniFinalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:citaMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRecetaMedicaPorCita">
+    <xs:sequence>
+      <xs:element name="idCita" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRecetaMedicaPorCitaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:recetaMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarCita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="citaMedica" type="tns:citaMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarCitaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarCita">
+    <xs:sequence>
+      <xs:element name="idCita" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarCitaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:citaMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCitasXPaciente">
+    <xs:sequence>
+      <xs:element name="idPac" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCitasXPacienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:citaMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="diaSemana">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Lunes" />
+      <xs:enumeration value="Martes" />
+      <xs:enumeration value="Miercoles" />
+      <xs:enumeration value="Jueves" />
+      <xs:enumeration value="Viernes" />
+      <xs:enumeration value="Sabado" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

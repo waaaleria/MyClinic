@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lp2myclinic/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="AtencionMedicaWS" targetNamespace="http://services.lp2myclinic/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LP2MyClinicWebService/AtencionMedicaWS?xsd=1" namespace="http://services.lp2myclinic/" />
+    </xsd:schema>
+  </types>
+  <message name="listarCitasMedicoPorPacienteFechas">
+    <part name="parameters" element="tns:listarCitasMedicoPorPacienteFechas" />
+  </message>
+  <message name="listarCitasMedicoPorPacienteFechasResponse">
+    <part name="parameters" element="tns:listarCitasMedicoPorPacienteFechasResponse" />
+  </message>
+  <message name="ListarHorarioPacienteFechaIniFinal">
+    <part name="parameters" element="tns:ListarHorarioPacienteFechaIniFinal" />
+  </message>
+  <message name="ListarHorarioPacienteFechaIniFinalResponse">
+    <part name="parameters" element="tns:ListarHorarioPacienteFechaIniFinalResponse" />
+  </message>
+  <message name="modificarCita">
+    <part name="parameters" element="tns:modificarCita" />
+  </message>
+  <message name="modificarCitaResponse">
+    <part name="parameters" element="tns:modificarCitaResponse" />
+  </message>
+  <message name="buscarCita">
+    <part name="parameters" element="tns:buscarCita" />
+  </message>
+  <message name="buscarCitaResponse">
+    <part name="parameters" element="tns:buscarCitaResponse" />
+  </message>
+  <message name="listarLineaRecetaMedica">
+    <part name="parameters" element="tns:listarLineaRecetaMedica" />
+  </message>
+  <message name="listarLineaRecetaMedicaResponse">
+    <part name="parameters" element="tns:listarLineaRecetaMedicaResponse" />
+  </message>
+  <message name="listarDiagnosticosPorCita">
+    <part name="parameters" element="tns:listarDiagnosticosPorCita" />
+  </message>
+  <message name="listarDiagnosticosPorCitaResponse">
+    <part name="parameters" element="tns:listarDiagnosticosPorCitaResponse" />
+  </message>
+  <message name="insertarRecetaMedica">
+    <part name="parameters" element="tns:insertarRecetaMedica" />
+  </message>
+  <message name="insertarRecetaMedicaResponse">
+    <part name="parameters" element="tns:insertarRecetaMedicaResponse" />
+  </message>
+  <message name="listarRecetaMedicaPorCitaDetalle">
+    <part name="parameters" element="tns:listarRecetaMedicaPorCitaDetalle" />
+  </message>
+  <message name="listarRecetaMedicaPorCitaDetalleResponse">
+    <part name="parameters" element="tns:listarRecetaMedicaPorCitaDetalleResponse" />
+  </message>
+  <message name="listarCitasxPacientexFecha">
+    <part name="parameters" element="tns:listarCitasxPacientexFecha" />
+  </message>
+  <message name="listarCitasxPacientexFechaResponse">
+    <part name="parameters" element="tns:listarCitasxPacientexFechaResponse" />
+  </message>
+  <message name="insertarDiagnostico">
+    <part name="parameters" element="tns:insertarDiagnostico" />
+  </message>
+  <message name="insertarDiagnosticoResponse">
+    <part name="parameters" element="tns:insertarDiagnosticoResponse" />
+  </message>
+  <message name="insertarCitaMedica">
+    <part name="parameters" element="tns:insertarCitaMedica" />
+  </message>
+  <message name="insertarCitaMedicaResponse">
+    <part name="parameters" element="tns:insertarCitaMedicaResponse" />
+  </message>
+  <message name="eliminarCitaMedica">
+    <part name="parameters" element="tns:eliminarCitaMedica" />
+  </message>
+  <message name="eliminarCitaMedicaResponse">
+    <part name="parameters" element="tns:eliminarCitaMedicaResponse" />
+  </message>
+  <message name="listarCitasXPaciente">
+    <part name="parameters" element="tns:listarCitasXPaciente" />
+  </message>
+  <message name="listarCitasXPacienteResponse">
+    <part name="parameters" element="tns:listarCitasXPacienteResponse" />
+  </message>
+  <message name="listarRecetaxCita">
+    <part name="parameters" element="tns:listarRecetaxCita" />
+  </message>
+  <message name="listarRecetaxCitaResponse">
+    <part name="parameters" element="tns:listarRecetaxCitaResponse" />
+  </message>
+  <message name="listarRecetaMedicaPorCita">
+    <part name="parameters" element="tns:listarRecetaMedicaPorCita" />
+  </message>
+  <message name="listarRecetaMedicaPorCitaResponse">
+    <part name="parameters" element="tns:listarRecetaMedicaPorCitaResponse" />
+  </message>
+  <portType name="AtencionMedicaWS">
+    <operation name="listarCitasMedicoPorPacienteFechas">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarCitasMedicoPorPacienteFechasRequest" message="tns:listarCitasMedicoPorPacienteFechas" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarCitasMedicoPorPacienteFechasResponse" message="tns:listarCitasMedicoPorPacienteFechasResponse" />
+    </operation>
+    <operation name="ListarHorarioPacienteFechaIniFinal">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/ListarHorarioPacienteFechaIniFinalRequest" message="tns:ListarHorarioPacienteFechaIniFinal" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/ListarHorarioPacienteFechaIniFinalResponse" message="tns:ListarHorarioPacienteFechaIniFinalResponse" />
+    </operation>
+    <operation name="modificarCita">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/modificarCitaRequest" message="tns:modificarCita" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/modificarCitaResponse" message="tns:modificarCitaResponse" />
+    </operation>
+    <operation name="buscarCita">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/buscarCitaRequest" message="tns:buscarCita" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/buscarCitaResponse" message="tns:buscarCitaResponse" />
+    </operation>
+    <operation name="listarLineaRecetaMedica">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarLineaRecetaMedicaRequest" message="tns:listarLineaRecetaMedica" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarLineaRecetaMedicaResponse" message="tns:listarLineaRecetaMedicaResponse" />
+    </operation>
+    <operation name="listarDiagnosticosPorCita">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarDiagnosticosPorCitaRequest" message="tns:listarDiagnosticosPorCita" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarDiagnosticosPorCitaResponse" message="tns:listarDiagnosticosPorCitaResponse" />
+    </operation>
+    <operation name="insertarRecetaMedica">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/insertarRecetaMedicaRequest" message="tns:insertarRecetaMedica" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/insertarRecetaMedicaResponse" message="tns:insertarRecetaMedicaResponse" />
+    </operation>
+    <operation name="listarRecetaMedicaPorCitaDetalle">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarRecetaMedicaPorCitaDetalleRequest" message="tns:listarRecetaMedicaPorCitaDetalle" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarRecetaMedicaPorCitaDetalleResponse" message="tns:listarRecetaMedicaPorCitaDetalleResponse" />
+    </operation>
+    <operation name="listarCitasxPacientexFecha">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarCitasxPacientexFechaRequest" message="tns:listarCitasxPacientexFecha" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarCitasxPacientexFechaResponse" message="tns:listarCitasxPacientexFechaResponse" />
+    </operation>
+    <operation name="insertarDiagnostico">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/insertarDiagnosticoRequest" message="tns:insertarDiagnostico" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/insertarDiagnosticoResponse" message="tns:insertarDiagnosticoResponse" />
+    </operation>
+    <operation name="insertarCitaMedica">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/insertarCitaMedicaRequest" message="tns:insertarCitaMedica" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/insertarCitaMedicaResponse" message="tns:insertarCitaMedicaResponse" />
+    </operation>
+    <operation name="eliminarCitaMedica">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/eliminarCitaMedicaRequest" message="tns:eliminarCitaMedica" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/eliminarCitaMedicaResponse" message="tns:eliminarCitaMedicaResponse" />
+    </operation>
+    <operation name="listarCitasXPaciente">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarCitasXPacienteRequest" message="tns:listarCitasXPaciente" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarCitasXPacienteResponse" message="tns:listarCitasXPacienteResponse" />
+    </operation>
+    <operation name="listarRecetaxCita">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarRecetaxCitaRequest" message="tns:listarRecetaxCita" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarRecetaxCitaResponse" message="tns:listarRecetaxCitaResponse" />
+    </operation>
+    <operation name="listarRecetaMedicaPorCita">
+      <input wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarRecetaMedicaPorCitaRequest" message="tns:listarRecetaMedicaPorCita" />
+      <output wsam:Action="http://services.lp2myclinic/AtencionMedicaWS/listarRecetaMedicaPorCitaResponse" message="tns:listarRecetaMedicaPorCitaResponse" />
+    </operation>
+  </portType>
+  <binding name="AtencionMedicaWSPortBinding" type="tns:AtencionMedicaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarCitasMedicoPorPacienteFechas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarHorarioPacienteFechaIniFinal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarCita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarCita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarLineaRecetaMedica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarDiagnosticosPorCita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarRecetaMedica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarRecetaMedicaPorCitaDetalle">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCitasxPacientexFecha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarDiagnostico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarCitaMedica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCitaMedica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCitasXPaciente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarRecetaxCita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarRecetaMedicaPorCita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AtencionMedicaWS">
+    <port name="AtencionMedicaWSPort" binding="tns:AtencionMedicaWSPortBinding">
+      <soap:address location="http://localhost:8080/LP2MyClinicWebService/AtencionMedicaWS" />
+    </port>
+  </service>
+</definitions>

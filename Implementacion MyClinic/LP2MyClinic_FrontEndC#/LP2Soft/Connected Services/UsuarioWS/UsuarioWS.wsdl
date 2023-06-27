@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lp2myclinic/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="UsuarioWS" targetNamespace="http://services.lp2myclinic/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LP2MyClinicWebService/UsuarioWS?xsd=1" namespace="http://services.lp2myclinic/" />
+    </xsd:schema>
+  </types>
+  <message name="listarMedicosPorNombreEspecialidad">
+    <part name="parameters" element="tns:listarMedicosPorNombreEspecialidad" />
+  </message>
+  <message name="listarMedicosPorNombreEspecialidadResponse">
+    <part name="parameters" element="tns:listarMedicosPorNombreEspecialidadResponse" />
+  </message>
+  <message name="tomarDatosMedico">
+    <part name="parameters" element="tns:tomarDatosMedico" />
+  </message>
+  <message name="tomarDatosMedicoResponse">
+    <part name="parameters" element="tns:tomarDatosMedicoResponse" />
+  </message>
+  <message name="modificarUsuario">
+    <part name="parameters" element="tns:modificarUsuario" />
+  </message>
+  <message name="modificarUsuarioResponse">
+    <part name="parameters" element="tns:modificarUsuarioResponse" />
+  </message>
+  <message name="modificarMedico">
+    <part name="parameters" element="tns:modificarMedico" />
+  </message>
+  <message name="modificarMedicoResponse">
+    <part name="parameters" element="tns:modificarMedicoResponse" />
+  </message>
+  <message name="buscarMedico">
+    <part name="parameters" element="tns:buscarMedico" />
+  </message>
+  <message name="buscarMedicoResponse">
+    <part name="parameters" element="tns:buscarMedicoResponse" />
+  </message>
+  <message name="obtenerIdPaciente">
+    <part name="parameters" element="tns:obtenerIdPaciente" />
+  </message>
+  <message name="obtenerIdPacienteResponse">
+    <part name="parameters" element="tns:obtenerIdPacienteResponse" />
+  </message>
+  <message name="listarMedicosTodos">
+    <part name="parameters" element="tns:listarMedicosTodos" />
+  </message>
+  <message name="listarMedicosTodosResponse">
+    <part name="parameters" element="tns:listarMedicosTodosResponse" />
+  </message>
+  <message name="obtenerUsuarioPorId">
+    <part name="parameters" element="tns:obtenerUsuarioPorId" />
+  </message>
+  <message name="obtenerUsuarioPorIdResponse">
+    <part name="parameters" element="tns:obtenerUsuarioPorIdResponse" />
+  </message>
+  <message name="listarMedicoXidEspecialidad">
+    <part name="parameters" element="tns:listarMedicoXidEspecialidad" />
+  </message>
+  <message name="listarMedicoXidEspecialidadResponse">
+    <part name="parameters" element="tns:listarMedicoXidEspecialidadResponse" />
+  </message>
+  <message name="obtener_datos_medico">
+    <part name="parameters" element="tns:obtener_datos_medico" />
+  </message>
+  <message name="obtener_datos_medicoResponse">
+    <part name="parameters" element="tns:obtener_datos_medicoResponse" />
+  </message>
+  <message name="verificarRolesDeUsuario">
+    <part name="parameters" element="tns:verificarRolesDeUsuario" />
+  </message>
+  <message name="verificarRolesDeUsuarioResponse">
+    <part name="parameters" element="tns:verificarRolesDeUsuarioResponse" />
+  </message>
+  <message name="verificarCuentaUsuario">
+    <part name="parameters" element="tns:verificarCuentaUsuario" />
+  </message>
+  <message name="verificarCuentaUsuarioResponse">
+    <part name="parameters" element="tns:verificarCuentaUsuarioResponse" />
+  </message>
+  <message name="buscarMedicoConEspecialidad">
+    <part name="parameters" element="tns:buscarMedicoConEspecialidad" />
+  </message>
+  <message name="buscarMedicoConEspecialidadResponse">
+    <part name="parameters" element="tns:buscarMedicoConEspecialidadResponse" />
+  </message>
+  <message name="halalr_id_usuario">
+    <part name="parameters" element="tns:halalr_id_usuario" />
+  </message>
+  <message name="halalr_id_usuarioResponse">
+    <part name="parameters" element="tns:halalr_id_usuarioResponse" />
+  </message>
+  <message name="listarEspecialidadesTodas">
+    <part name="parameters" element="tns:listarEspecialidadesTodas" />
+  </message>
+  <message name="listarEspecialidadesTodasResponse">
+    <part name="parameters" element="tns:listarEspecialidadesTodasResponse" />
+  </message>
+  <message name="listarAdministradoresTodos">
+    <part name="parameters" element="tns:listarAdministradoresTodos" />
+  </message>
+  <message name="listarAdministradoresTodosResponse">
+    <part name="parameters" element="tns:listarAdministradoresTodosResponse" />
+  </message>
+  <message name="listarPacientesPorDniNombre">
+    <part name="parameters" element="tns:listarPacientesPorDniNombre" />
+  </message>
+  <message name="listarPacientesPorDniNombreResponse">
+    <part name="parameters" element="tns:listarPacientesPorDniNombreResponse" />
+  </message>
+  <message name="modificarPaciente">
+    <part name="parameters" element="tns:modificarPaciente" />
+  </message>
+  <message name="modificarPacienteResponse">
+    <part name="parameters" element="tns:modificarPacienteResponse" />
+  </message>
+  <portType name="UsuarioWS">
+    <operation name="listarMedicosPorNombreEspecialidad">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/listarMedicosPorNombreEspecialidadRequest" message="tns:listarMedicosPorNombreEspecialidad" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/listarMedicosPorNombreEspecialidadResponse" message="tns:listarMedicosPorNombreEspecialidadResponse" />
+    </operation>
+    <operation name="tomarDatosMedico">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/tomarDatosMedicoRequest" message="tns:tomarDatosMedico" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/tomarDatosMedicoResponse" message="tns:tomarDatosMedicoResponse" />
+    </operation>
+    <operation name="modificarUsuario">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/modificarUsuarioRequest" message="tns:modificarUsuario" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/modificarUsuarioResponse" message="tns:modificarUsuarioResponse" />
+    </operation>
+    <operation name="modificarMedico">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/modificarMedicoRequest" message="tns:modificarMedico" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/modificarMedicoResponse" message="tns:modificarMedicoResponse" />
+    </operation>
+    <operation name="buscarMedico">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/buscarMedicoRequest" message="tns:buscarMedico" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/buscarMedicoResponse" message="tns:buscarMedicoResponse" />
+    </operation>
+    <operation name="obtenerIdPaciente">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/obtenerIdPacienteRequest" message="tns:obtenerIdPaciente" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/obtenerIdPacienteResponse" message="tns:obtenerIdPacienteResponse" />
+    </operation>
+    <operation name="listarMedicosTodos">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/listarMedicosTodosRequest" message="tns:listarMedicosTodos" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/listarMedicosTodosResponse" message="tns:listarMedicosTodosResponse" />
+    </operation>
+    <operation name="obtenerUsuarioPorId">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/obtenerUsuarioPorIdRequest" message="tns:obtenerUsuarioPorId" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/obtenerUsuarioPorIdResponse" message="tns:obtenerUsuarioPorIdResponse" />
+    </operation>
+    <operation name="listarMedicoXidEspecialidad">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/listarMedicoXidEspecialidadRequest" message="tns:listarMedicoXidEspecialidad" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/listarMedicoXidEspecialidadResponse" message="tns:listarMedicoXidEspecialidadResponse" />
+    </operation>
+    <operation name="obtener_datos_medico">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/obtener_datos_medicoRequest" message="tns:obtener_datos_medico" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/obtener_datos_medicoResponse" message="tns:obtener_datos_medicoResponse" />
+    </operation>
+    <operation name="verificarRolesDeUsuario">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/verificarRolesDeUsuarioRequest" message="tns:verificarRolesDeUsuario" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/verificarRolesDeUsuarioResponse" message="tns:verificarRolesDeUsuarioResponse" />
+    </operation>
+    <operation name="verificarCuentaUsuario">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/verificarCuentaUsuarioRequest" message="tns:verificarCuentaUsuario" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/verificarCuentaUsuarioResponse" message="tns:verificarCuentaUsuarioResponse" />
+    </operation>
+    <operation name="buscarMedicoConEspecialidad">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/buscarMedicoConEspecialidadRequest" message="tns:buscarMedicoConEspecialidad" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/buscarMedicoConEspecialidadResponse" message="tns:buscarMedicoConEspecialidadResponse" />
+    </operation>
+    <operation name="halalr_id_usuario">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/halalr_id_usuarioRequest" message="tns:halalr_id_usuario" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/halalr_id_usuarioResponse" message="tns:halalr_id_usuarioResponse" />
+    </operation>
+    <operation name="listarEspecialidadesTodas">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/listarEspecialidadesTodasRequest" message="tns:listarEspecialidadesTodas" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/listarEspecialidadesTodasResponse" message="tns:listarEspecialidadesTodasResponse" />
+    </operation>
+    <operation name="listarAdministradoresTodos">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/listarAdministradoresTodosRequest" message="tns:listarAdministradoresTodos" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/listarAdministradoresTodosResponse" message="tns:listarAdministradoresTodosResponse" />
+    </operation>
+    <operation name="listarPacientesPorDniNombre">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/listarPacientesPorDniNombreRequest" message="tns:listarPacientesPorDniNombre" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/listarPacientesPorDniNombreResponse" message="tns:listarPacientesPorDniNombreResponse" />
+    </operation>
+    <operation name="modificarPaciente">
+      <input wsam:Action="http://services.lp2myclinic/UsuarioWS/modificarPacienteRequest" message="tns:modificarPaciente" />
+      <output wsam:Action="http://services.lp2myclinic/UsuarioWS/modificarPacienteResponse" message="tns:modificarPacienteResponse" />
+    </operation>
+  </portType>
+  <binding name="UsuarioWSPortBinding" type="tns:UsuarioWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarMedicosPorNombreEspecialidad">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="tomarDatosMedico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarMedico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarMedico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerIdPaciente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMedicosTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerUsuarioPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMedicoXidEspecialidad">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtener_datos_medico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verificarRolesDeUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verificarCuentaUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarMedicoConEspecialidad">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="halalr_id_usuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEspecialidadesTodas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarAdministradoresTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPacientesPorDniNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPaciente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="UsuarioWS">
+    <port name="UsuarioWSPort" binding="tns:UsuarioWSPortBinding">
+      <soap:address location="http://localhost:8080/LP2MyClinicWebService/UsuarioWS" />
+    </port>
+  </service>
+</definitions>

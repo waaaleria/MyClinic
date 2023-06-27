@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{884C2462-6B11-49F7-809E-2109DAD19B04}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LP2Soft</RootNamespace>
+    <AssemblyName>LP2Soft</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\AtencionMedicaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ItinerarioWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\MedicinaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UsuarioWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Estado.cs" />
+    <Compile Include="FrmBibliotecaHistorialPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBibliotecaHistorialPaciente.Designer.cs">
+      <DependentUpon>FrmBibliotecaHistorialPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEliminarCitaPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminarCitaPaciente.Designer.cs">
+      <DependentUpon>frmEliminarCitaPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPantallaInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPantallaInicio.Designer.cs">
+      <DependentUpon>FormPantallaInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministradorGestionarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministradorGestionarMedico.Designer.cs">
+      <DependentUpon>frmAdministradorGestionarMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministradorGestionarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministradorGestionarPaciente.Designer.cs">
+      <DependentUpon>frmAdministradorGestionarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministradorRevisionLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministradorRevisionLote.Designer.cs">
+      <DependentUpon>frmAdministradorRevisionLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistorialPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistorialPaciente.designer.cs">
+      <DependentUpon>frmHistorialPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMedicoDetalleCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMedicoDetalleCita.Designer.cs">
+      <DependentUpon>frmMedicoDetalleCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMedicoHistoricoCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMedicoHistoricoCitas.Designer.cs">
+      <DependentUpon>frmMedicoHistoricoCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNotificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotificacion.Designer.cs">
+      <DependentUpon>frmNotificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPacienteBuscarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPacienteBuscarCitas.Designer.cs">
+      <DependentUpon>frmPacienteBuscarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaPaciente.Designer.cs">
+      <DependentUpon>frmBusquedaPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaMedico.Designer.cs">
+      <DependentUpon>frmBusquedaMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaMedicamento.designer.cs">
+      <DependentUpon>frmBusquedaMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPacienteDetalleCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPacienteDetalleCita.Designer.cs">
+      <DependentUpon>frmPacienteDetalleCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPacienteGestionarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPacienteGestionarCitas.Designer.cs">
+      <DependentUpon>frmPacienteGestionarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlmacenistaIngresarLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlmacenistaIngresarLote.Designer.cs">
+      <DependentUpon>frmAlmacenistaIngresarLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresarMedicina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresarMedicina.Designer.cs">
+      <DependentUpon>frmIngresarMedicina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioSesion.Designer.cs">
+      <DependentUpon>frmInicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlmacenistaMantenimientoLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlmacenistaMantenimientoLote.Designer.cs">
+      <DependentUpon>frmAlmacenistaMantenimientoLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPacGestionaPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPacGestionaPerfil.Designer.cs">
+      <DependentUpon>FrmPacGestionaPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPacienteHistoricoCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPacienteHistoricoCitas.Designer.cs">
+      <DependentUpon>frmPacienteHistoricoCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTarjetaMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTarjetaMedico.Designer.cs">
+      <DependentUpon>frmTarjetaMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBibliotecaHistorialPaciente.resx">
+      <DependentUpon>FrmBibliotecaHistorialPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminarCitaPaciente.resx">
+      <DependentUpon>frmEliminarCitaPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPantallaInicio.resx">
+      <DependentUpon>FormPantallaInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministradorGestionarMedico.resx">
+      <DependentUpon>frmAdministradorGestionarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministradorGestionarPaciente.resx">
+      <DependentUpon>frmAdministradorGestionarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministradorRevisionLote.resx">
+      <DependentUpon>frmAdministradorRevisionLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistorialPaciente.resx">
+      <DependentUpon>frmHistorialPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMedicoDetalleCita.resx">
+      <DependentUpon>frmMedicoDetalleCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMedicoHistoricoCitas.resx">
+      <DependentUpon>frmMedicoHistoricoCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotificacion.resx">
+      <DependentUpon>frmNotificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPacienteBuscarCitas.resx">
+      <DependentUpon>frmPacienteBuscarCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaPaciente.resx">
+      <DependentUpon>frmBusquedaPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaMedico.resx">
+      <DependentUpon>frmBusquedaMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaMedicamento.resx">
+      <DependentUpon>frmBusquedaMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPacienteDetalleCita.resx">
+      <DependentUpon>frmPacienteDetalleCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPacienteGestionarCitas.resx">
+      <DependentUpon>frmPacienteGestionarCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlmacenistaIngresarLote.resx">
+      <DependentUpon>frmAlmacenistaIngresarLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresarMedicina.resx">
+      <DependentUpon>frmIngresarMedicina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicioSesion.resx">
+      <DependentUpon>frmInicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlmacenistaMantenimientoLote.resx">
+      <DependentUpon>frmAlmacenistaMantenimientoLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPacGestionaPerfil.resx">
+      <DependentUpon>FrmPacGestionaPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPacienteHistoricoCitas.resx">
+      <DependentUpon>frmPacienteHistoricoCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTarjetaMedico.resx">
+      <DependentUpon>frmTarjetaMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Connected Services\AtencionMedicaWS\AtencionMedicaWS.wsdl" />
+    <None Include="Connected Services\AtencionMedicaWS\AtencionMedicaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.buscarCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.citaMedica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.citaMedicaDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.diagnostico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.eliminarCitaMedicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.insertarCitaMedicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.insertarDiagnosticoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.insertarRecetaMedicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.lineaReceta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.lineaRecetaDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.listarCitasMedicoPorPacienteFechasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.listarCitasXPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.listarCitasxPacientexFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.listarDiagnosticosPorCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.ListarHorarioPacienteFechaIniFinalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.listarLineaRecetaMedicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.listarRecetaMedicaPorCitaDetalleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.listarRecetaMedicaPorCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.listarRecetaxCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.modificarCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AtencionMedicaWS\LP2Soft.AtencionMedicaWS.recetaMedica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ItinerarioWS\ItinerarioWS.wsdl" />
+    <None Include="Connected Services\ItinerarioWS\ItinerarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ItinerarioWS\LP2Soft.ItinerarioWS.insertarListaHorariosPorMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ItinerarioWS\LP2Soft.ItinerarioWS.listarProgramaXFechaMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ItinerarioWS\LP2Soft.ItinerarioWS.listarProgramaXMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ItinerarioWS\LP2Soft.ItinerarioWS.programaAtencion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.buscarMedicamentosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.eliminarInventarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.insertarInventarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.insertarMedicamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.inventario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.listarInventarioMantenimientoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.listarInventarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.listarMedicamentosTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.listarMedicinasTodasParaAlmacenistaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.listar_inventario_x_fechasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.medicamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\LP2Soft.MedicinaWS.obtenerMedicamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MedicinaWS\MedicinaWS.wsdl" />
+    <None Include="Connected Services\MedicinaWS\MedicinaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.administrador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.buscarMedicoConEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.buscarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.especialidad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.halalr_id_usuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.listarAdministradoresTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.listarEspecialidadesTodasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.listarMedicosPorNombreEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.listarMedicosTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.listarMedicoXidEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.listarPacientesPorDniNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.medico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.medicoDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.modificarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.modificarPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.modificarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.obtenerIdPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.obtenerUsuarioPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.obtener_datos_medicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.paciente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.rol.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.tomarDatosMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.verificarCuentaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\LP2Soft.UsuarioWS.verificarRolesDeUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsuarioWS\UsuarioWS.wsdl" />
+    <None Include="Connected Services\UsuarioWS\UsuarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cactus_banner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-window-xxl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_no_texto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-05-28 at 6.22.33 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-05-28 at 7.26.03 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-05-28 at 11.45.22 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-05-28 at 11.48.15 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-05-28 at 11.48.15 PM1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anadir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_0073 - copia.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k0MH1Dqc_400x400-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %289%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %289%29 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ORTEGA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud+upload+file+storage+upload+icon-1320190558968694328.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recepcion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2810%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2810%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2810%29 %281%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2810%29 %281%29 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2810%29 %281%29 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2810%29 %281%29 %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2810%29 %281%29 %284%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2811%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2811%29 %281%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2812%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerca1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recepcion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AtencionMedicaWS\" />
+    <WCFMetadataStorage Include="Connected Services\ItinerarioWS\" />
+    <WCFMetadataStorage Include="Connected Services\MedicinaWS\" />
+    <WCFMetadataStorage Include="Connected Services\UsuarioWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UsuarioWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UsuarioWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UsuarioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MedicinaWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MedicinaWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MedicinaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ItinerarioWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ItinerarioWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ItinerarioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AtencionMedicaWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AtencionMedicaWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AtencionMedicaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2813%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2813%29-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2813%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2813%29 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %2813%29 %283%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

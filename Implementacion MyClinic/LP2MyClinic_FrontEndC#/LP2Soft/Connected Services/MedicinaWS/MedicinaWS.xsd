@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.lp2myclinic/" targetNamespace="http://services.lp2myclinic/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarMedicamentos" type="tns:buscarMedicamentos" />
+  <xs:element name="buscarMedicamentosResponse" type="tns:buscarMedicamentosResponse" />
+  <xs:element name="eliminarInventario" type="tns:eliminarInventario" />
+  <xs:element name="eliminarInventarioResponse" type="tns:eliminarInventarioResponse" />
+  <xs:element name="insertarInventario" type="tns:insertarInventario" />
+  <xs:element name="insertarInventarioResponse" type="tns:insertarInventarioResponse" />
+  <xs:element name="insertarMedicamento" type="tns:insertarMedicamento" />
+  <xs:element name="insertarMedicamentoResponse" type="tns:insertarMedicamentoResponse" />
+  <xs:element name="listarInventario" type="tns:listarInventario" />
+  <xs:element name="listarInventarioMantenimiento" type="tns:listarInventarioMantenimiento" />
+  <xs:element name="listarInventarioMantenimientoResponse" type="tns:listarInventarioMantenimientoResponse" />
+  <xs:element name="listarInventarioResponse" type="tns:listarInventarioResponse" />
+  <xs:element name="listarMedicamentosTodos" type="tns:listarMedicamentosTodos" />
+  <xs:element name="listarMedicamentosTodosResponse" type="tns:listarMedicamentosTodosResponse" />
+  <xs:element name="listarMedicinasTodasParaAlmacenista" type="tns:listarMedicinasTodasParaAlmacenista" />
+  <xs:element name="listarMedicinasTodasParaAlmacenistaResponse" type="tns:listarMedicinasTodasParaAlmacenistaResponse" />
+  <xs:element name="listar_inventario_x_fechas" type="tns:listar_inventario_x_fechas" />
+  <xs:element name="listar_inventario_x_fechasResponse" type="tns:listar_inventario_x_fechasResponse" />
+  <xs:element name="obtenerMedicamento" type="tns:obtenerMedicamento" />
+  <xs:element name="obtenerMedicamentoResponse" type="tns:obtenerMedicamentoResponse" />
+  <xs:complexType name="listarMedicinasTodasParaAlmacenista">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarMedicinasTodasParaAlmacenistaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="medicamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="componente" type="tns:componente" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idMedicamento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreComercial" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreLaboratorio" type="xs:string" />
+      <xs:element name="precio" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="componente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idComponente" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreComponente" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarMedicamentos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cadenaBusqueda" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarMedicamentosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerMedicamento">
+    <xs:sequence>
+      <xs:element name="idMedicamento" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerMedicamentoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarInventario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="inventario" type="tns:inventario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="inventario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoLote" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCaducidad" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaIngreso" type="xs:dateTime" />
+      <xs:element name="idInventario" type="xs:int" />
+      <xs:element minOccurs="0" name="medicamento" type="tns:medicamento" />
+      <xs:element name="stock" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarInventarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarInventarioMantenimiento">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarInventarioMantenimientoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:inventario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarMedicamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="medicamento" type="tns:medicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarMedicamentoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listar_inventario_x_fechas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="inventario" type="tns:inventario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listar_inventario_x_fechasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:inventario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMedicamentosTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarMedicamentosTodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarInventario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="inventario" type="tns:inventario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarInventarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarInventario">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarInventarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:inventario" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

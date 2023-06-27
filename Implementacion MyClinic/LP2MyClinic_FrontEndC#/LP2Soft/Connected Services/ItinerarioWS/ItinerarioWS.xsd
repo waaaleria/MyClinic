@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.lp2myclinic/" targetNamespace="http://services.lp2myclinic/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="insertarListaHorariosPorMedico" type="tns:insertarListaHorariosPorMedico" />
+  <xs:element name="insertarListaHorariosPorMedicoResponse" type="tns:insertarListaHorariosPorMedicoResponse" />
+  <xs:element name="listarProgramaXFechaMedico" type="tns:listarProgramaXFechaMedico" />
+  <xs:element name="listarProgramaXFechaMedicoResponse" type="tns:listarProgramaXFechaMedicoResponse" />
+  <xs:element name="listarProgramaXMedico" type="tns:listarProgramaXMedico" />
+  <xs:element name="listarProgramaXMedicoResponse" type="tns:listarProgramaXMedicoResponse" />
+  <xs:complexType name="listarProgramaXMedico">
+    <xs:sequence>
+      <xs:element name="idMedico" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarProgramaXMedicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:programaAtencion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="programaAtencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="diaSemana" type="tns:diaSemana" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="hora_fin" type="xs:string" />
+      <xs:element minOccurs="0" name="hora_inicio" type="xs:string" />
+      <xs:element name="idMedico" type="xs:int" />
+      <xs:element name="idProgramaAtencion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarListaHorariosPorMedico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:programaAtencion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarListaHorariosPorMedicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarProgramaXFechaMedico">
+    <xs:sequence>
+      <xs:element name="idMedico" type="xs:int" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarProgramaXFechaMedicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:programaAtencion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="diaSemana">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Lunes" />
+      <xs:enumeration value="Martes" />
+      <xs:enumeration value="Miercoles" />
+      <xs:enumeration value="Jueves" />
+      <xs:enumeration value="Viernes" />
+      <xs:enumeration value="Sabado" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

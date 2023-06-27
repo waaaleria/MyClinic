@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lp2myclinic/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ItinerarioWS" targetNamespace="http://services.lp2myclinic/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LP2MyClinicWebService/ItinerarioWS?xsd=1" namespace="http://services.lp2myclinic/" />
+    </xsd:schema>
+  </types>
+  <message name="listarProgramaXMedico">
+    <part name="parameters" element="tns:listarProgramaXMedico" />
+  </message>
+  <message name="listarProgramaXMedicoResponse">
+    <part name="parameters" element="tns:listarProgramaXMedicoResponse" />
+  </message>
+  <message name="listarProgramaXFechaMedico">
+    <part name="parameters" element="tns:listarProgramaXFechaMedico" />
+  </message>
+  <message name="listarProgramaXFechaMedicoResponse">
+    <part name="parameters" element="tns:listarProgramaXFechaMedicoResponse" />
+  </message>
+  <message name="insertarListaHorariosPorMedico">
+    <part name="parameters" element="tns:insertarListaHorariosPorMedico" />
+  </message>
+  <message name="insertarListaHorariosPorMedicoResponse">
+    <part name="parameters" element="tns:insertarListaHorariosPorMedicoResponse" />
+  </message>
+  <portType name="ItinerarioWS">
+    <operation name="listarProgramaXMedico">
+      <input wsam:Action="http://services.lp2myclinic/ItinerarioWS/listarProgramaXMedicoRequest" message="tns:listarProgramaXMedico" />
+      <output wsam:Action="http://services.lp2myclinic/ItinerarioWS/listarProgramaXMedicoResponse" message="tns:listarProgramaXMedicoResponse" />
+    </operation>
+    <operation name="listarProgramaXFechaMedico">
+      <input wsam:Action="http://services.lp2myclinic/ItinerarioWS/listarProgramaXFechaMedicoRequest" message="tns:listarProgramaXFechaMedico" />
+      <output wsam:Action="http://services.lp2myclinic/ItinerarioWS/listarProgramaXFechaMedicoResponse" message="tns:listarProgramaXFechaMedicoResponse" />
+    </operation>
+    <operation name="insertarListaHorariosPorMedico">
+      <input wsam:Action="http://services.lp2myclinic/ItinerarioWS/insertarListaHorariosPorMedicoRequest" message="tns:insertarListaHorariosPorMedico" />
+      <output wsam:Action="http://services.lp2myclinic/ItinerarioWS/insertarListaHorariosPorMedicoResponse" message="tns:insertarListaHorariosPorMedicoResponse" />
+    </operation>
+  </portType>
+  <binding name="ItinerarioWSPortBinding" type="tns:ItinerarioWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarProgramaXMedico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProgramaXFechaMedico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarListaHorariosPorMedico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ItinerarioWS">
+    <port name="ItinerarioWSPort" binding="tns:ItinerarioWSPortBinding">
+      <soap:address location="http://localhost:8080/LP2MyClinicWebService/ItinerarioWS" />
+    </port>
+  </service>
+</definitions>

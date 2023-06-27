@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.lp2myclinic/" targetNamespace="http://services.lp2myclinic/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarMedico" type="tns:buscarMedico" />
+  <xs:element name="buscarMedicoConEspecialidad" type="tns:buscarMedicoConEspecialidad" />
+  <xs:element name="buscarMedicoConEspecialidadResponse" type="tns:buscarMedicoConEspecialidadResponse" />
+  <xs:element name="buscarMedicoResponse" type="tns:buscarMedicoResponse" />
+  <xs:element name="halalr_id_usuario" type="tns:halalr_id_usuario" />
+  <xs:element name="halalr_id_usuarioResponse" type="tns:halalr_id_usuarioResponse" />
+  <xs:element name="listarAdministradoresTodos" type="tns:listarAdministradoresTodos" />
+  <xs:element name="listarAdministradoresTodosResponse" type="tns:listarAdministradoresTodosResponse" />
+  <xs:element name="listarEspecialidadesTodas" type="tns:listarEspecialidadesTodas" />
+  <xs:element name="listarEspecialidadesTodasResponse" type="tns:listarEspecialidadesTodasResponse" />
+  <xs:element name="listarMedicoXidEspecialidad" type="tns:listarMedicoXidEspecialidad" />
+  <xs:element name="listarMedicoXidEspecialidadResponse" type="tns:listarMedicoXidEspecialidadResponse" />
+  <xs:element name="listarMedicosPorNombreEspecialidad" type="tns:listarMedicosPorNombreEspecialidad" />
+  <xs:element name="listarMedicosPorNombreEspecialidadResponse" type="tns:listarMedicosPorNombreEspecialidadResponse" />
+  <xs:element name="listarMedicosTodos" type="tns:listarMedicosTodos" />
+  <xs:element name="listarMedicosTodosResponse" type="tns:listarMedicosTodosResponse" />
+  <xs:element name="listarPacientesPorDniNombre" type="tns:listarPacientesPorDniNombre" />
+  <xs:element name="listarPacientesPorDniNombreResponse" type="tns:listarPacientesPorDniNombreResponse" />
+  <xs:element name="modificarMedico" type="tns:modificarMedico" />
+  <xs:element name="modificarMedicoResponse" type="tns:modificarMedicoResponse" />
+  <xs:element name="modificarPaciente" type="tns:modificarPaciente" />
+  <xs:element name="modificarPacienteResponse" type="tns:modificarPacienteResponse" />
+  <xs:element name="modificarUsuario" type="tns:modificarUsuario" />
+  <xs:element name="modificarUsuarioResponse" type="tns:modificarUsuarioResponse" />
+  <xs:element name="obtenerIdPaciente" type="tns:obtenerIdPaciente" />
+  <xs:element name="obtenerIdPacienteResponse" type="tns:obtenerIdPacienteResponse" />
+  <xs:element name="obtenerUsuarioPorId" type="tns:obtenerUsuarioPorId" />
+  <xs:element name="obtenerUsuarioPorIdResponse" type="tns:obtenerUsuarioPorIdResponse" />
+  <xs:element name="obtener_datos_medico" type="tns:obtener_datos_medico" />
+  <xs:element name="obtener_datos_medicoResponse" type="tns:obtener_datos_medicoResponse" />
+  <xs:element name="tomarDatosMedico" type="tns:tomarDatosMedico" />
+  <xs:element name="tomarDatosMedicoResponse" type="tns:tomarDatosMedicoResponse" />
+  <xs:element name="verificarCuentaUsuario" type="tns:verificarCuentaUsuario" />
+  <xs:element name="verificarCuentaUsuarioResponse" type="tns:verificarCuentaUsuarioResponse" />
+  <xs:element name="verificarRolesDeUsuario" type="tns:verificarRolesDeUsuario" />
+  <xs:element name="verificarRolesDeUsuarioResponse" type="tns:verificarRolesDeUsuarioResponse" />
+  <xs:complexType name="tomarDatosMedico">
+    <xs:sequence>
+      <xs:element name="idMedico" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tomarDatosMedicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="medico">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:usuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cmp" type="xs:string" />
+          <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
+          <xs:element minOccurs="0" name="estudios" type="xs:string" />
+          <xs:element name="experiencia" type="xs:int" />
+          <xs:element name="idMedico" type="xs:int" />
+          <xs:element minOccurs="0" name="programa" type="tns:programaAtencion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellido" type="xs:string" />
+      <xs:element minOccurs="0" name="contraseña" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element name="edad" type="xs:int" />
+      <xs:element minOccurs="0" name="genero" type="xs:string" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="rol" type="tns:rol" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idEspecialidad" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="programaAtencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="diaSemana" type="tns:diaSemana" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="hora_fin" type="xs:string" />
+      <xs:element minOccurs="0" name="hora_inicio" type="xs:string" />
+      <xs:element name="idMedico" type="xs:int" />
+      <xs:element name="idProgramaAtencion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cargo" type="xs:string" />
+      <xs:element name="idRol" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIdPaciente">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIdPacienteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="halalr_id_usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="halalr_id_usuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarUsuario">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerUsuarioPorId">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerUsuarioPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPacientesPorDniNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPacientesPorDniNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:paciente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paciente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:usuario">
+        <xs:sequence>
+          <xs:element name="idPaciente" type="xs:int" />
+          <xs:element minOccurs="0" name="primeraVisita" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ultimaVisita" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="listarMedicosTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarMedicosTodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEspecialidadesTodas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarEspecialidadesTodasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:especialidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarMedico">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarMedicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMedicosPorNombreEspecialidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMedicosPorNombreEspecialidadResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarMedico">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarMedicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:medicoDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="medicoDTO">
+    <xs:sequence>
+      <xs:element name="cmp" type="xs:int" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element name="idMedico" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreCompleto" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreEspecialidad" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAdministradoresTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarAdministradoresTodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:administrador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="administrador">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:usuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoTrabajo" type="xs:string" />
+          <xs:element name="experiencia" type="xs:int" />
+          <xs:element name="idAdministrador" type="xs:int" />
+          <xs:element minOccurs="0" name="programa" type="tns:programaAtencion" />
+          <xs:element minOccurs="0" name="tipo" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="modificarPaciente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPacienteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarCuentaUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarCuentaUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarMedicoConEspecialidad">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarMedicoConEspecialidadResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:medicoDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtener_datos_medico">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtener_datos_medicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMedicoXidEspecialidad">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMedicoXidEspecialidadResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarRolesDeUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarRolesDeUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:rol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="diaSemana">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Lunes" />
+      <xs:enumeration value="Martes" />
+      <xs:enumeration value="Miercoles" />
+      <xs:enumeration value="Jueves" />
+      <xs:enumeration value="Viernes" />
+      <xs:enumeration value="Sabado" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
