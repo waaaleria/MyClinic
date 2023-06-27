@@ -1,0 +1,23 @@
+Cuentas para acceder al sistema
+Cada uno tiene un rol diferente.
+
+Paciente 
+DNI: 444444444
+Contraseña: contrasena
+
+Médico
+DNI: 222222222
+Contraseña: contrasena
+
+Medico y paciente
+DNI: 888888888
+Contraseña: contrasena
+
+Administrador
+DNI: 000000000
+Contraseña: contrasena
+
+Almacenista
+DNI: 535353535
+Contraseña: contrasena
+
