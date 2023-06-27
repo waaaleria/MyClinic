@@ -53,8 +53,8 @@ No cuenta con un software de registro de citas en línea lo cual provoca que su 
 # Cuentas de usuario para acceder al sistema:
 Cada uno tiene un rol diferente.
 
-Rol: Paciente 
-DNI: 444444444
+Rol: Paciente  
+DNI: 444444444  
 Contraseña: contrasena
 
 Rol: Médico
